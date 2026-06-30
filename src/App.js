@@ -31,7 +31,6 @@ function App() {
         <div className="hidden 2xl:block">2XL</div>
       </div> */}
 
-      {/* Global Background */}
       {/* <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[#B4C8B2]" />
 
