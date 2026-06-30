@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import Hero from "./components/Hero";
 import Details from "./components/Details";
 import Rsvp from "./components/Rsvp";
