@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 const OnMountAnimation = ({ duration = 2000, onFinish }) => {
-  const [progress, setProgress] = useState(0);
-
   useEffect(() => {
     const interval = 50;
     const increment = (interval / duration) * 100;

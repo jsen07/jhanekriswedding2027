@@ -2,7 +2,7 @@ import Hero from "./components/Hero";
 import Details from "./components/Details";
 import Rsvp from "./components/Rsvp";
 import Story from "./components/Story";
-import FAQ from "./components/FAQ";
+// import FAQ from "./components/FAQ";
 import OnMountAnimation from "./components/OnMountAnimation";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";

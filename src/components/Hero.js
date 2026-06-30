@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 
 // import FlowerAnimation from "../assets/animations/newScene_nicer_sakura_flowers.json";
 
@@ -150,16 +150,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-  /* <div className="absolute rounded-full w-[500px] h-[500px] z-10 bg-stone-100 flex items-center justify-center">
-        <h1 className="font-tangerine text-8xl font-bold"> Kris & Jhane </h1>
-      </div> */
-}
-{
-  /* <Lottie
-        animationData={FlowerAnimation}
-        loop={false}
-        className="w-[800px] h-[800px]"
-      /> */
-}
