@@ -2,25 +2,11 @@ import React, { useEffect } from "react";
 
 const OnMountAnimation = ({ duration = 2000, onFinish }) => {
   useEffect(() => {
-    const interval = 50;
-    const increment = (interval / duration) * 100;
-
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        if (prev + increment >= 100) {
-          clearInterval(timer);
-          return 100;
-        }
-        return prev + increment;
-      });
-    }, interval);
-
     const finishTimeout = setTimeout(() => {
       onFinish();
     }, duration);
 
     return () => {
-      clearInterval(timer);
       clearTimeout(finishTimeout);
     };
   }, [duration, onFinish]);
