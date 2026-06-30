@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 
-import FlowerAnimation from "../assets/animations/newScene_nicer_sakura_flowers.json";
+// import FlowerAnimation from "../assets/animations/newScene_nicer_sakura_flowers.json";
 
-import Flower from "../assets/—Pngtree—corner frame with pastel flowers_20851707.png";
+// import Flower from "../assets/—Pngtree—corner frame with pastel flowers_20851707.png";
 
 import Flower2 from "../assets/3680e6bc131c74861feac38387bbc2a0.png";
 import Flower3 from "../assets/a3842616d010f9b8b0d5779a93c4e1a5.png";
