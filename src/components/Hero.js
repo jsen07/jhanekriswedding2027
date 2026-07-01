@@ -1,48 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Flower2 from "../assets/3680e6bc131c74861feac38387bbc2a0.webp";
 import Flower3 from "../assets/a3842616d010f9b8b0d5779a93c4e1a5.webp";
 import GreenFlower from "../assets/greenflower.webp";
 import FlowerCorner from "../assets/eucalyptus-corner.webp";
-const weddingDate = new Date("2027-07-07T00:00:00").getTime();
 
 const Hero = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-  useEffect(() => {
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance <= 0) {
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-        });
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((distance / (1000 * 60)) % 60),
-        seconds: Math.floor((distance / 1000) % 60),
-      });
-    };
-
-    updateCountdown();
-
-    const timer = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="relative min-h-screen">
       <div className="relative z-10 flex min-h-screen items-center justify-center px-5 sm:px-6">
@@ -161,7 +124,7 @@ const Hero = () => {
       "
           >
             <p className="mb-4 text-[8px] sm:text-[11px] uppercase tracking-[0.3em] text-[#8e8f7c] sm:text-sm sm:tracking-[0.4em]">
-              Together with their families
+              With Love, We Invite You
             </p>
 
             <h1 className="font-tangerine text-[clamp(4rem,16vw,9rem)] leading-[0.9] text-[#676b57]">
@@ -186,34 +149,6 @@ const Hero = () => {
               <p className="uppercase tracking-[0.3em] text-[#8e8f7c] text-xs">
                 Bourton Hall
               </p>
-            </div>
-
-            <div className="mt-4 flex flex-row items-center justify-center sm:flex sm:flex-wrap sm:justify-center sm:gap-10 md:gap-12">
-              {[
-                { label: "Days", value: timeLeft.days },
-                { label: "Hours", value: timeLeft.hours },
-                { label: "Minutes", value: timeLeft.minutes },
-                { label: "Seconds", value: timeLeft.seconds },
-              ].map((item, index) => (
-                <div
-                  key={item.label}
-                  className="flex items-center justify-center"
-                >
-                  <div className="text-center">
-                    <p className="min-w-[50px] text-2xl font-light tracking-tight text-[#676b57] transition-all duration-500 sm:text-5xl md:text-6xl">
-                      {String(item.value).padStart(2, "0")}
-                    </p>
-
-                    <p className="mt-2 text-[6px] uppercase tracking-[0.28em] text-[#8e8f7c] sm:text-[11px] sm:tracking-[0.35em]">
-                      {item.label}
-                    </p>
-                  </div>
-
-                  {index < 3 && (
-                    <div className="mx-6 hidden h-12 w-px bg-[#8e8f7c] md:block" />
-                  )}
-                </div>
-              ))}
             </div>
           </div>
         </div>

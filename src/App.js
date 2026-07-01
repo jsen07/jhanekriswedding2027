@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import Countdown from "./components/Countdown";
 import Details from "./components/Details";
 import Rsvp from "./components/Rsvp";
 import Story from "./components/Story";
@@ -57,6 +58,7 @@ function App() {
 
       <main className="relative z-10">
         <Hero />
+        <Countdown />
         <Story />
         <Details />
         <Rsvp />
