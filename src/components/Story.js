@@ -1,7 +1,7 @@
 import React from "react";
-import storyborder from "../assets/07397740e5e379825087a8b71720ecff.png";
-import whiteflower from "../assets/whiteflower.png";
-import Couple from "../assets/KrisAndJhane.png";
+import storyborder from "../assets/07397740e5e379825087a8b71720ecff.webp";
+import whiteflower from "../assets/whiteflower.webp";
+import Couple from "../assets/KrisAndJhane.webp";
 
 const timeline = [
   {

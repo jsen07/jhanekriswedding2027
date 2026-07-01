@@ -34,12 +34,12 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* <a
+        <a
           href="#rsvp"
-          className="rounded-full bg-amber-300 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white md:hidden"
+          className="rounded-full bg-amber-300 px-4 py-2 text-xs uppercase tracking-[0.2em] mt-4 text-white md:hidden"
         >
           RSVP
-        </a> */}
+        </a>
       </nav>
     </header>
   );

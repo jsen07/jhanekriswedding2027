@@ -1,15 +1,37 @@
 import React, { useEffect } from "react";
 
-const OnMountAnimation = ({ duration = 2000, onFinish }) => {
+const preloadImages = (images = []) => {
+  return Promise.all(
+    images.map(
+      (src) =>
+        new Promise((resolve) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = resolve;
+        }),
+    ),
+  );
+};
+
+const OnMountAnimation = ({ duration = 2000, onFinish, images = [] }) => {
   useEffect(() => {
-    const finishTimeout = setTimeout(() => {
-      onFinish();
-    }, duration);
+    let isMounted = true;
+
+    const timer = new Promise((resolve) => {
+      setTimeout(resolve, duration);
+    });
+
+    Promise.all([timer, preloadImages(images)]).then(() => {
+      if (isMounted) {
+        onFinish?.();
+      }
+    });
 
     return () => {
-      clearTimeout(finishTimeout);
+      isMounted = false;
     };
-  }, [duration, onFinish]);
+  }, [duration, onFinish, images]);
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-sage">
@@ -22,12 +44,13 @@ const OnMountAnimation = ({ duration = 2000, onFinish }) => {
           Kris <span className="text-[#D6C27A]">&</span> Jhane
         </h1>
 
-        <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#676b57]">
-          Loading invitation
-        </p>
-
-        <div className="mt-8 h-px w-56 overflow-hidden bg-[#676b57]/20 mx-auto">
-          <div className="h-full origin-left animate-[loadingBar_2s_linear_forwards] bg-[#D6C27A]" />
+        <div className="mx-auto mt-8 h-px w-56 overflow-hidden bg-[#676b57]/20">
+          <div
+            className="h-full origin-left bg-[#D6C27A]"
+            style={{
+              animation: `loadingBar ${duration}ms linear forwards`,
+            }}
+          />
         </div>
       </div>
     </div>

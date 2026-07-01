@@ -6,6 +6,14 @@ import Story from "./components/Story";
 import OnMountAnimation from "./components/OnMountAnimation";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+
+import Flower2 from "./assets/3680e6bc131c74861feac38387bbc2a0.webp";
+import Flower3 from "./assets/a3842616d010f9b8b0d5779a93c4e1a5.webp";
+import GreenFlower from "./assets/greenflower.webp";
+import FlowerCorner from "./assets/eucalyptus-corner.webp";
+
+const preloadAssets = [Flower2, Flower3, GreenFlower, FlowerCorner];
+
 function App() {
   const [showSplash, setShowSplash] = useState(true);
 
@@ -16,7 +24,11 @@ function App() {
 
   if (showSplash) {
     return (
-      <OnMountAnimation duration={2000} onFinish={() => setShowSplash(false)} />
+      <OnMountAnimation
+        duration={2000}
+        images={preloadAssets}
+        onFinish={() => setShowSplash(false)}
+      />
     );
   }
 

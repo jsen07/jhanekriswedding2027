@@ -1,8 +1,22 @@
 import React from "react";
-import Dress from "../assets/pngwing.com.png";
-import Suit from "../assets/suit.png";
+import Dress from "../assets/pngwing.com.webp";
+import Suit from "../assets/suit.webp";
 
 const Details = () => {
+  const dressCodeColours = [
+    {
+      colour: "#B4C8B2",
+      name: "Sage Green",
+    },
+    {
+      colour: "#E8CFC7",
+      name: "Blush Pink",
+    },
+    {
+      colour: "#F8F4EA",
+      name: "Warm Beige",
+    },
+  ];
   return (
     <section
       id="details"
@@ -101,15 +115,15 @@ const Details = () => {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-5">
-              {["#B4C8B2", "#E8CFC7", "#F8F4EA"].map((color) => (
-                <div key={color} className="flex flex-col items-center gap-2">
+              {dressCodeColours.map((colour, index) => (
+                <div key={index} className="flex flex-col items-center gap-2">
                   <div
-                    className="h-12 w-12 rounded-full border border-black/10 shadow-lg sm:h-14 sm:w-14"
-                    style={{ backgroundColor: color }}
+                    className="h-12 w-12 rounded border border-black/10 shadow-lg sm:h-14 sm:w-14"
+                    style={{ backgroundColor: colour.colour }}
                   />
 
                   <span className="text-[10px] tracking-wide text-[#676b57] sm:text-[11px]">
-                    {color}
+                    {colour.name}
                   </span>
                 </div>
               ))}

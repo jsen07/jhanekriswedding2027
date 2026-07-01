@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import Lottie from "lottie-react";
 
-// import FlowerAnimation from "../assets/animations/newScene_nicer_sakura_flowers.json";
-
-// import Flower from "../assets/—Pngtree—corner frame with pastel flowers_20851707.png";
-
-import Flower2 from "../assets/3680e6bc131c74861feac38387bbc2a0.png";
-import Flower3 from "../assets/a3842616d010f9b8b0d5779a93c4e1a5.png";
-
+import Flower2 from "../assets/3680e6bc131c74861feac38387bbc2a0.webp";
+import Flower3 from "../assets/a3842616d010f9b8b0d5779a93c4e1a5.webp";
+import GreenFlower from "../assets/greenflower.webp";
+import FlowerCorner from "../assets/eucalyptus-corner.webp";
 const weddingDate = new Date("2027-07-07T00:00:00").getTime();
 
 const Hero = () => {
@@ -55,7 +51,15 @@ const Hero = () => {
           <img
             src={Flower2}
             alt=""
-            className="w-[380px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
+            className="w-[310px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
+          />
+        </div>
+
+        <div className="pointer-events-none absolute -bottom-[120px] -right-28 -rotate-45 z-10 sm:-bottom-[150px] sm:-right-32">
+          <img
+            src={GreenFlower}
+            alt=""
+            className="w-[360px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
           />
         </div>
 
@@ -64,17 +68,25 @@ const Hero = () => {
           <img
             src={Flower2}
             alt=""
-            className="w-[380px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
-            style={{ animationDelay: "2s" }}
+            className="w-[360px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
+            style={{ animationDelay: "1s" }}
           />
         </div>
 
-        {/* Extra florals - hidden on mobile to keep layout clean */}
+        <div className="pointer-events-none absolute -left-28 -top-[140px] z-10 rotate-[220deg] sm:-right-24 sm:-top-24 lg:-right-20 lg:-top-20">
+          <img
+            src={FlowerCorner}
+            alt=""
+            className="w-[280px] opacity-90 animate-float sm:w-[420px] lg:w-[560px] 2xl:w-[650px]"
+            style={{ animationDelay: "2.5s" }}
+          />
+        </div>
+
         <div className="pointer-events-none absolute -right-20 top-0 rotate-180 md:block">
           <img
             src={Flower3}
             alt=""
-            className="w-[280px] opacity-60 lg:w-[380px]"
+            className="w-[220px] opacity-60 lg:w-[380px]"
           />
         </div>
 
@@ -82,66 +94,127 @@ const Hero = () => {
           <img
             src={Flower3}
             alt=""
-            className="w-[280px] opacity-60 lg:w-[380px]"
+            className="w-[240px] opacity-60 lg:w-[380px]"
           />
         </div>
 
-        <div
-          className="relative z-30 max-w-3xl text-center border rounded-2xl bg-white/60 p-6 mb-10
-    md:mb-0
-    md:border-0
-    md:bg-transparent
-    md:p-0
-    md:backdrop-blur-none"
-        >
-          <p className="mb-4 text-[11px] uppercase tracking-[0.3em] text-[#8e8f7c] sm:text-sm sm:tracking-[0.4em]">
-            Together with their families
-          </p>
+        <div className="relative flex justify-center mb-28 sm:mb-0">
+          {/* Outer Diamond */}
+          <div
+            className="
+    pointer-events-none
+    absolute
+    left-1/2
+    top-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    rotate-45
+    border-4
+    border-[#D6C27A]/90
+    w-[350px]
+    h-[350px]
+    sm:w-[550px]
+    sm:h-[550px]
+    md:w-[520px]
+    md:h-[520px]
+    lg:w-[620px]
+    lg:h-[620px]
+  "
+          />
 
-          <h1 className="font-tangerine text-[clamp(5rem,18vw,12rem)] leading-none text-[#676b57]">
-            Kris
-            <span className="mx-3 text-amber-300 sm:mx-6">&</span>
-            Jhane
-          </h1>
+          {/* Inner Diamond */}
+          <div
+            className="
+    pointer-events-none
+    absolute
+    left-1/2
+    top-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    rotate-45
+    border-2
+    border-[#D6C27A]/50
+    w-[320px]
+    h-[320px]
+    sm:w-[520px]
+    sm:h-[520px]
+    md:w-[490px]
+    md:h-[490px]
+    lg:w-[590px]
+    lg:h-[590px]
+  "
+          />
 
-          <div className="my-7 flex items-center justify-center gap-4 sm:my-8">
-            <div className="h-px w-12 bg-[#676b57]/70 sm:w-16" />
-            <div className="h-2 w-2 rotate-45 bg-[#676b57]" />
-            <div className="h-px w-12 bg-[#676b57]/70 sm:w-16" />
-          </div>
+          {/* Content */}
+          <div
+            className="
+        relative
+        max-w-3xl
+        rounded-2xl
+        p-10
+        z-30
+        text-center
 
-          <div className="flex flex-col items-center justify-center gap-3 text-xs uppercase tracking-[0.25em] text-[#4E5848] sm:flex-row sm:gap-5 sm:text-sm sm:tracking-[0.3em]">
-            <span>07 July 2027</span>
-            <div className="hidden h-6 w-px bg-[#4E5848]/40 sm:block" />
-            <span>Bourton Hall</span>
-          </div>
+        md:bg-transparent
+        md:p-0
+        md:backdrop-blur-none
+      "
+          >
+            <p className="mb-4 text-[8px] sm:text-[11px] uppercase tracking-[0.3em] text-[#8e8f7c] sm:text-sm sm:tracking-[0.4em]">
+              Together with their families
+            </p>
 
-          <div className="mt-12 flex flex-row gap-x-5 gap-y-8 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-10 md:gap-12">
-            {[
-              { label: "Days", value: timeLeft.days },
-              { label: "Hours", value: timeLeft.hours },
-              { label: "Minutes", value: timeLeft.minutes },
-              { label: "Seconds", value: timeLeft.seconds },
-            ].map((item, index) => (
-              <div
-                key={item.label}
-                className="flex items-center justify-center"
-              >
-                <div className="text-center">
-                  <p className="min-w-[60px] text-4xl font-light tracking-tight text-[#676b57] transition-all duration-500 sm:text-5xl md:text-6xl">
-                    {String(item.value).padStart(2, "0")}
-                  </p>
+            <h1 className="font-tangerine text-[clamp(4rem,16vw,9rem)] leading-[0.9] text-[#676b57]">
+              Kris
+              <span className="mx-2 text-[#D6C27A] sm:mx-4">&</span>
+              Jhane
+            </h1>
 
-                  <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-[#8e8f7c] sm:text-[11px] sm:tracking-[0.35em]">
-                    {item.label}
-                  </p>
+            <div className="my-2 flex items-center justify-center gap-4 sm:my-8">
+              <div className="h-px w-12 bg-[#676b57]/70 sm:w-16" />
+
+              <div className="h-2 w-2 rotate-45 bg-[#D6C27A]" />
+
+              <div className="h-px w-12 bg-[#676b57]/70 sm:w-16" />
+            </div>
+
+            <div className="mt-6 space-y-2">
+              <p className="uppercase tracking-[0.35em] text-[#676b57] text-xs sm:text-sm">
+                07 July 2027
+              </p>
+
+              <p className="uppercase tracking-[0.3em] text-[#8e8f7c] text-xs">
+                Bourton Hall
+              </p>
+            </div>
+
+            <div className="mt-4 flex flex-row items-center justify-center sm:flex sm:flex-wrap sm:justify-center sm:gap-10 md:gap-12">
+              {[
+                { label: "Days", value: timeLeft.days },
+                { label: "Hours", value: timeLeft.hours },
+                { label: "Minutes", value: timeLeft.minutes },
+                { label: "Seconds", value: timeLeft.seconds },
+              ].map((item, index) => (
+                <div
+                  key={item.label}
+                  className="flex items-center justify-center"
+                >
+                  <div className="text-center">
+                    <p className="min-w-[50px] text-2xl font-light tracking-tight text-[#676b57] transition-all duration-500 sm:text-5xl md:text-6xl">
+                      {String(item.value).padStart(2, "0")}
+                    </p>
+
+                    <p className="mt-2 text-[6px] uppercase tracking-[0.28em] text-[#8e8f7c] sm:text-[11px] sm:tracking-[0.35em]">
+                      {item.label}
+                    </p>
+                  </div>
+
+                  {index < 3 && (
+                    <div className="mx-6 hidden h-12 w-px bg-[#8e8f7c] md:block" />
+                  )}
                 </div>
-
-                {index < 3 && (
-                  <div className="mx-6 hidden h-12 w-px bg-[#8e8f7c] md:block" />
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
