@@ -5,6 +5,7 @@ import Details from "./components/Details";
 import DressCode from "./components/DressCode";
 import Rsvp from "./components/Rsvp";
 import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
 import OnMountAnimation from "./components/OnMountAnimation";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
@@ -35,7 +36,7 @@ function App() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden bg-white">
       {/* <div className="fixed top-0 left-0 z-50 bg-black text-white text-base px-10 py-1 rounded-br">
         <div className="block sm:hidden">XS</div>
         <div className="hidden sm:block md:hidden">SM</div>
@@ -65,6 +66,7 @@ function App() {
         <DressCode />
         <Rsvp />
         <FAQ />
+        <Footer />
       </main>
     </div>
   );

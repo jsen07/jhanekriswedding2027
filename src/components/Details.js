@@ -1,6 +1,4 @@
 import React from "react";
-import Dress from "../assets/pngwing.com.webp";
-import Suit from "../assets/suit.webp";
 
 const Details = () => {
   return (
@@ -9,14 +7,6 @@ const Details = () => {
       className="relative min-h-screen bg-sage px-5 py-20 text-[#676b57] sm:px-6 lg:px-10 lg:py-28 flex flex-col items-center"
     >
       <div className="relative flex max-w-6xl flex-col gap-12 lg:min-h-[70vh] lg:flex-row lg:gap-16">
-        <div className="pointer-events-none absolute bottom-[-10px] left-[250px] hidden 2xl:block">
-          <img src={Suit} alt="" className="w-[300px] opacity-75" />
-        </div>
-
-        <div className="pointer-events-none absolute bottom-0 right-[-250px] hidden 2xl:block">
-          <img src={Dress} alt="" className="w-[300px] opacity-75" />
-        </div>
-
         {/* Left content */}
         <div className="flex flex-col">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[#8e8f7c] sm:text-sm">
