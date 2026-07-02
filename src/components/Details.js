@@ -3,20 +3,6 @@ import Dress from "../assets/pngwing.com.webp";
 import Suit from "../assets/suit.webp";
 
 const Details = () => {
-  const dressCodeColours = [
-    {
-      colour: "#B4C8B2",
-      name: "Sage Green",
-    },
-    {
-      colour: "#E8CFC7",
-      name: "Blush Pink",
-    },
-    {
-      colour: "#F8F4EA",
-      name: "Warm Beige",
-    },
-  ];
   return (
     <section
       id="details"
@@ -96,37 +82,6 @@ const Details = () => {
                 <span>Evening Celebration</span>
                 <span className="text-[#676b57]/70">TBC</span>
               </div>
-            </div>
-          </div>
-
-          <div className="bg-white/45 p-6 shadow-xl shadow-[#676b57]/10 backdrop-blur-sm sm:p-8">
-            <p className="mb-3 text-xs uppercase tracking-[0.35em] text-[#8e8f7c]">
-              Dress Code
-            </p>
-
-            <h3 className="text-xl font-light text-[#676b57] sm:text-2xl">
-              Garden Elegance
-            </h3>
-
-            <p className="mt-2 max-w-xl text-sm leading-7 text-[#676b57]/75">
-              We kindly invite our guests to dress in elegant attire inspired by
-              our wedding palette. Soft, earthy and romantic tones are
-              encouraged.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-5">
-              {dressCodeColours.map((colour, index) => (
-                <div key={index} className="flex flex-col items-center gap-2">
-                  <div
-                    className="h-12 w-12 rounded border border-black/10 shadow-lg sm:h-14 sm:w-14"
-                    style={{ backgroundColor: colour.colour }}
-                  />
-
-                  <span className="text-[10px] tracking-wide text-[#676b57] sm:text-[11px]">
-                    {colour.name}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>

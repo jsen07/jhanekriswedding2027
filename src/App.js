@@ -1,9 +1,10 @@
 import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
-import Details from "./components/Details";
-import Rsvp from "./components/Rsvp";
 import Story from "./components/Story";
-// import FAQ from "./components/FAQ";
+import Details from "./components/Details";
+import DressCode from "./components/DressCode";
+import Rsvp from "./components/Rsvp";
+import FAQ from "./components/FAQ";
 import OnMountAnimation from "./components/OnMountAnimation";
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
@@ -61,8 +62,9 @@ function App() {
         <Countdown />
         <Story />
         <Details />
+        <DressCode />
         <Rsvp />
-        {/* <FAQ /> */}
+        <FAQ />
       </main>
     </div>
   );

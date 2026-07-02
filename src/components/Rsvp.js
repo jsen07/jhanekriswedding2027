@@ -1,12 +1,27 @@
 import React from "react";
-
+import FlowerBanner from "../assets/Flower-banner.png";
 const Rsvp = () => {
   return (
     <section
       id="rsvp"
       className="relative flex min-h-screen items-center justify-center px-5 py-20 text-[#676b57]"
     >
-      <div className="w-full max-w-2xl rounded-3xl bg-white/40 p-4 md:p-12">
+      <div className="relative w-full max-w-2xl  overflow-visible rounded-3xl bg-white/40 md:p-12">
+        <div className="pointer-events-none absolute left-1/2 -top-40 -translate-x-1/2  -translate-y-[10%]">
+          <img
+            src={FlowerBanner}
+            alt="flower-banner"
+            className="
+            max-w-none
+      w-[320px]
+      sm:w-[450px]
+      lg:w-[650px]
+      xl:w-[750px]
+      2xl:w-[450px]
+      select-none
+    "
+          />
+        </div>
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-[#8e8f7c]">
             Kindly Reply

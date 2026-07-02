@@ -22,6 +22,28 @@ body {
   scrollbar-width: none;
 }
 
+.custom-scrollbar {
+  scrollbar-width: thin;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
 .nav-link {
   @apply text-xs uppercase tracking-[0.25em] text-[#676b57] transition-all duration-300 hover:text-[#b08b80];
 }
