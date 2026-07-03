@@ -43,10 +43,6 @@ const Story = () => {
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="mb-20 text-center">
-          <p className="mb-4 text-sm uppercase tracking-[0.4em] text-[#8e8f7c]">
-            Our Journey
-          </p>
-
           <h2 className="font-tangerine text-[5rem] leading-none md:text-[7rem]">
             Our Story
           </h2>

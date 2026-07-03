@@ -7,7 +7,7 @@ import FlowerCorner from "../assets/eucalyptus-corner.webp";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen">
+    <section id="hero" className="relative min-h-screen">
       <div className="relative z-10 flex min-h-screen items-center justify-center px-5 sm:px-6">
         {/* Bottom left flowers */}
         <div className="pointer-events-none absolute -bottom-[-60px] -left-24 z-10 sm:-bottom-24 sm:-left-20 lg:-bottom-28 lg:-left-16">
@@ -36,7 +36,7 @@ const Hero = () => {
           />
         </div>
 
-        <div className="pointer-events-none absolute -left-28 -top-[140px] z-10 rotate-[220deg] sm:-right-24 sm:-top-24 lg:-right-20 lg:-top-20">
+        <div className="pointer-events-none absolute -left-28 -top-[140px] z-10 rotate-[220deg]">
           <img
             src={FlowerCorner}
             alt=""

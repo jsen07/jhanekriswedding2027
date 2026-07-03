@@ -58,7 +58,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="relative overflow-hidden bg-[#FFF8F6] py-28 px-6 text-[#676b57]"
+      className="relative overflow-hidden bg-[#FDF1EE] py-28 px-6 text-[#676b57]"
     >
       <div className="mx-auto max-w-4xl">
         <div className="mb-16 text-center">
@@ -95,9 +95,7 @@ const FAQ = () => {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="flex w-full items-center justify-between p-6 text-left"
                 >
-                  <h3 className="text-sm font-light text-[#676b57]">
-                    {faq.question}
-                  </h3>
+                  <h3 className="text-sm text-[#676b57]">{faq.question}</h3>
 
                   <ChevronDown
                     size={22}

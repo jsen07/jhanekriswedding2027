@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import Countdown from "./components/Countdown";
 import Story from "./components/Story";
 import Details from "./components/Details";
+import Location from "./components/Location";
 import DressCode from "./components/DressCode";
 import Rsvp from "./components/Rsvp";
 import FAQ from "./components/FAQ";
@@ -63,6 +64,7 @@ function App() {
         <Countdown />
         <Story />
         <Details />
+        <Location />
         <DressCode />
         <Rsvp />
         <FAQ />

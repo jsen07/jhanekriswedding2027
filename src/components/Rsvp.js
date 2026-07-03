@@ -39,7 +39,7 @@ const Rsvp = () => {
 
           <p className="mx-auto max-w-lg leading-8 text-[#676b57]/80">
             We would be honoured to celebrate this special day with you. Please
-            let us know whether you'll be joining us by completing the form
+            let us know whether you will be joining us by completing the form
             below.
           </p>
         </div>
@@ -69,12 +69,30 @@ const Rsvp = () => {
             />
           </div>
 
+          {/* Phone Number */}
+          <div>
+            <label className="mb-2 block text-sm uppercase tracking-[0.25em] text-[#8e8f7c]">
+              Phone Number{" "}
+              <span className="text-xs italic normal-case tracking-tighter">
+                (Recommended)
+              </span>
+            </label>
+
+            <input
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder="0121 Do 1 mate"
+              className="w-full border-b border-[#676b57]/20 text-sm bg-transparent py-3 outline-none transition focus:border-[#D6C27A]"
+            />
+          </div>
+
           <div>
             <label className="mb-3 block text-sm uppercase tracking-[0.25em] text-[#8e8f7c]">
               Will you be attending?
             </label>
 
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-6 mb-10">
               <label className="flex cursor-pointer items-center gap-2 text-xs">
                 <input type="radio" name="attendance" />
                 Joyfully Accept
@@ -93,9 +111,9 @@ const Rsvp = () => {
             </label>
 
             <textarea
-              rows={4}
+              rows={6}
               placeholder="Please let us know if you have any dietary requirements..."
-              className="text-base w-full resize-none rounded-xl border border-[#676b57]/20 bg-white/20 p-4 outline-none transition focus:border-[#D6C27A]"
+              className="text-sm placeholder:text-sm w-full resize-none rounded-xl border border-[#676b57]/20 bg-white/20 p-4 outline-none transition focus:border-[#D6C27A]"
             />
           </div>
 

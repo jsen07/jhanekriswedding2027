@@ -14,7 +14,7 @@ const colours = [
   { name: "Blush", hex: "#f2c1bd" },
   { name: "Champagne", hex: "#F7E7C4" },
   { name: "Light Grey", hex: "#d3d8d4" },
-  { name: "Cream", hex: "#f5f0e8" },
+  { name: "Beige", hex: "#EDE4D3" },
 ];
 
 const DressCode = () => {
@@ -55,30 +55,35 @@ const DressCode = () => {
                 Theme
               </p>
 
-              <h3 className="text-4xl font-light text-[#676b57]">
+              <h3 className="text-xl font-light text-[#676b57]">
                 Floral Bridgerton
               </h3>
 
-              <p className="mt-6 leading-8 text-[#676b57]/80">
+              <p className="mt-6 leading-8 text-sm text-[#676b57]/80">
                 Think flowing dresses, tailored suits and refined accessories.
                 Soft earthy colours are encouraged, while bright neon shades,
                 denim and casual trainers are best avoided.
               </p>
 
-              <div className="mt-10 flex flex-col gap-4">
+              <p className="mt-4 text-xs leading-6 italic text-[#8e8f7c]">
+                Note: We kindly request that guests refrain from wearing white,
+                ivory, or cream to allow the bride to shine on her special day.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 text-[#676b57]/80 text-sm">
                 <div className="flex items-center gap-4">
                   <div className="h-3 w-3 rounded-full bg-[#D6C27A]" />
-                  <span>Formal attire</span>
+                  <span>Formal Attire</span>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <div className="h-3 w-3 rounded-full bg-[#D6C27A]" />
-                  <span>Earthy & romantic tones</span>
+                  <span>Earthy & Romantic Tones</span>
                 </div>
 
                 <div className="flex items-center gap-4">
                   <div className="h-3 w-3 rounded-full bg-[#D6C27A]" />
-                  <span>Garden-friendly footwear recommended</span>
+                  <span>Garden-Friendly Footwear Recommended</span>
                 </div>
               </div>
             </div>
@@ -104,9 +109,9 @@ const DressCode = () => {
                 ))}
               </div>
 
-              <p className="mt-10 text-center text-sm italic text-[#8e8f7c]">
-                Your presence is the greatest gift of all. These colours are
-                simply a guide to help create a beautifully coordinated day.
+              <p className="mt-10 px-4 text-center text-xs italic text-[#8e8f7c]">
+                These colours are simply a guide to help create a beautifully
+                coordinated day.
               </p>
             </div>
           </div>

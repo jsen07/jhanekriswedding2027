@@ -1,5 +1,5 @@
 import React from "react";
-
+import HamburgerMenu from "./HamburgerMenu";
 const Navbar = () => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center">
@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <a
             href="#rsvp"
-            className="rounded-full bg-amber-400 px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#b08b80]"
+            className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#b08b80]"
           >
             RSVP
           </a>
@@ -36,10 +36,12 @@ const Navbar = () => {
 
         <a
           href="#rsvp"
-          className="rounded-full bg-amber-300 px-4 py-2 text-xs uppercase tracking-[0.2em] mt-4 text-white md:hidden"
+          className="rounded-full bg-[#D6C27A] px-4 py-2 text-xs uppercase tracking-[0.2em] mt-4 text-white md:hidden"
         >
           RSVP
         </a>
+
+        <HamburgerMenu />
       </nav>
     </header>
   );
