@@ -7,7 +7,14 @@ const Location = () => {
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+    const token = process.env.REACT_APP_MAPBOX_TOKEN;
+
+    if (!token) {
+      console.error("Missing REACT_APP_MAPBOX_TOKEN");
+      return;
+    }
+
+    mapboxgl.accessToken = token;
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
