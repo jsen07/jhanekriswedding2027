@@ -3,12 +3,18 @@ import * as maptilersdk from "@maptiler/sdk";
 import "@maptiler/sdk/dist/maptiler-sdk.css";
 
 const Location = () => {
-  const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
+  const mapRef = useRef(null);
 
   useEffect(() => {
-    const key = process.env.REACT_APP_MAPTILER_KEY;
+    if (
+      mapContainerRef.current &&
+      mapContainerRef.current.children.length > 0
+    ) {
+      return;
+    }
 
+    const key = process.env.REACT_APP_MAPTILER_KEY;
     if (!key) {
       console.error("Missing REACT_APP_MAPTILER_KEY");
       return;
@@ -16,6 +22,7 @@ const Location = () => {
 
     maptilersdk.config.apiKey = key;
 
+    // 2. Use a direct, modern style variant string identifier
     const map = new maptilersdk.Map({
       container: mapContainerRef.current,
       style: maptilersdk.MapStyle.STREETS,
@@ -36,12 +43,14 @@ const Location = () => {
 
     mapRef.current = map;
 
-    // Clean up on unmount
+    // 3. Keep the cleanup function focused on production unmounting
     return () => {
-      if (map) map.remove();
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
     };
   }, []);
-
   return (
     <section
       id="location"
