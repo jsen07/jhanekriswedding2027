@@ -7,29 +7,29 @@ const Location = () => {
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
+    const key = process.env.REACT_APP_MAPTILER_KEY;
+
+    if (!key) {
+      console.error("Missing REACT_APP_MAPTILER_KEY");
+      return;
+    }
+
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: `https://api.maptiler.com/maps/basic-v2/style.json?key=${process.env.REACT_APP_MAPTILER_KEY}`,
+      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${key}`,
       center: [-1.3857, 52.3558],
       zoom: 15,
     });
 
-    map.dragRotate.disable();
-    map.touchZoomRotate.disableRotation();
-
     map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-    new maplibregl.Marker({
-      color: "#f2c1bd",
-    })
+    new maplibregl.Marker({ color: "#f2c1bd" })
       .setLngLat([-1.3857, 52.3558])
       .setPopup(
         new maplibregl.Popup().setHTML(`
-      <div style="text-align:center">
         <h3>Bourton Hall</h3>
         <p>Wedding Venue</p>
-      </div>
-    `),
+      `),
       )
       .addTo(map);
 
