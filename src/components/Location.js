@@ -21,21 +21,25 @@ const Location = () => {
       zoom: 15,
     });
 
-    map.addControl(new maplibregl.NavigationControl(), "top-right");
+    map.on("load", () => {
+      map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-    new maplibregl.Marker({ color: "#f2c1bd" })
-      .setLngLat([-1.3857, 52.3558])
-      .setPopup(
-        new maplibregl.Popup().setHTML(`
-        <h3>Bourton Hall</h3>
-        <p>Wedding Venue</p>
-      `),
-      )
-      .addTo(map);
+      new maplibregl.Marker({ color: "#f2c1bd" })
+        .setLngLat([-1.3857, 52.3558])
+        .setPopup(
+          new maplibregl.Popup().setHTML(`
+          <h3>Bourton Hall</h3>
+          <p>Wedding Venue</p>
+        `),
+        )
+        .addTo(map);
 
-    mapRef.current = map;
+      mapRef.current = map;
+    });
 
-    return () => map.remove();
+    return () => {
+      if (map) map.remove();
+    };
   }, []);
 
   return (
