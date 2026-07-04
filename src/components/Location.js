@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
+import MapLibreWorker from "worker-loader!maplibre-gl/dist/maplibre-gl-csp-worker";
+
 const Location = () => {
   const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
@@ -14,6 +16,7 @@ const Location = () => {
       return;
     }
 
+    maplibregl.workerClass = MapLibreWorker;
     const map = new maplibregl.Map({
       container: mapContainerRef.current,
       style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${key}`,
