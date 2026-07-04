@@ -1,24 +1,15 @@
 import React, { useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 const Location = () => {
   const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    const token = process.env.REACT_APP_MAPBOX_TOKEN;
-
-    if (!token) {
-      console.error("Missing REACT_APP_MAPBOX_TOKEN");
-      return;
-    }
-
-    mapboxgl.accessToken = token;
-
-    const map = new mapboxgl.Map({
+    const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: `https://api.maptiler.com/maps/basic-v2/style.json?key=${process.env.REACT_APP_MAPTILER_KEY}`,
       center: [-1.3857, 52.3558],
       zoom: 15,
     });
@@ -26,17 +17,19 @@ const Location = () => {
     map.dragRotate.disable();
     map.touchZoomRotate.disableRotation();
 
-    map.addControl(new mapboxgl.NavigationControl(), "top-right");
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
 
-    new mapboxgl.Marker({
+    new maplibregl.Marker({
       color: "#f2c1bd",
     })
       .setLngLat([-1.3857, 52.3558])
       .setPopup(
-        new mapboxgl.Popup().setHTML(`
-          <h3>Bourton Hall</h3>
-          <p>Wedding Venue</p>
-        `),
+        new maplibregl.Popup().setHTML(`
+      <div style="text-align:center">
+        <h3>Bourton Hall</h3>
+        <p>Wedding Venue</p>
+      </div>
+    `),
       )
       .addTo(map);
 

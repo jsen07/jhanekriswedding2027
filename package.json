@@ -10,7 +10,7 @@
     "dotenv": "^17.4.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^1.22.0",
-    "mapbox-gl": "^2.15.0",
+    "maplibre-gl": "^5.24.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-scripts": "5.0.1",
