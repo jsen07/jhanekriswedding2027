@@ -1,47 +1,44 @@
 import React, { useEffect, useRef } from "react";
-import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
-
-maplibregl.workerUrl = "https://unpkg.com";
+import * as maptilersdk from "@maptiler/sdk";
+import "@maptiler/sdk/dist/maptiler-sdk.css";
 
 const Location = () => {
   const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    const key = process.env.REACT_APP_MAPTILER_KEY;
+    if (mapRef.current) return;
 
-    if (!key) {
-      console.error("Missing REACT_APP_MAPTILER_KEY");
-      return;
+    const key = process.env.REACT_APP_MAPTILER_KEY;
+    if (!key) return;
+
+    maptilersdk.config.apiKey = key;
+
+    maptilersdk.config.workerUrl = "https://maptiler.com";
+
+    if (mapContainerRef.current) {
+      mapContainerRef.current.innerHTML = "";
     }
 
-    const map = new maplibregl.Map({
+    const map = new maptilersdk.Map({
       container: mapContainerRef.current,
-      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${key}`,
+      style: "streets-v2",
       center: [-1.3857, 52.3558],
       zoom: 15,
+      navigationControl: "top-right",
     });
 
-    map.on("load", () => {
-      map.addControl(new maplibregl.NavigationControl(), "top-right");
-
-      new maplibregl.Marker({ color: "#f2c1bd" })
-        .setLngLat([-1.3857, 52.3558])
-        .setPopup(
-          new maplibregl.Popup().setHTML(`
+    new maptilersdk.Marker({ color: "#f2c1bd" })
+      .setLngLat([-1.3857, 52.3558])
+      .setPopup(
+        new maptilersdk.Popup().setHTML(`
           <h3>Bourton Hall</h3>
           <p>Wedding Venue</p>
         `),
-        )
-        .addTo(map);
+      )
+      .addTo(map);
 
-      mapRef.current = map;
-    });
-
-    return () => {
-      if (map) map.remove();
-    };
+    mapRef.current = map;
   }, []);
 
   return (
