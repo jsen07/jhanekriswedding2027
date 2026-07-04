@@ -26,6 +26,7 @@ const Location = () => {
       center: [-1.3857, 52.3558],
       zoom: 15,
       navigationControl: "top-right",
+      workerCount: 0,
     });
 
     new maptilersdk.Marker({ color: "#f2c1bd" })
