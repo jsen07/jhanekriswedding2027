@@ -1,56 +1,49 @@
 import React, { useEffect, useRef } from "react";
-import * as maptilersdk from "@maptiler/sdk";
-import "@maptiler/sdk/dist/maptiler-sdk.css";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+
+maplibregl.workerUrl = "https://unpkg.com";
 
 const Location = () => {
-  const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
+  const mapContainerRef = useRef(null);
 
   useEffect(() => {
-    if (
-      mapContainerRef.current &&
-      mapContainerRef.current.children.length > 0
-    ) {
-      return;
-    }
-
     const key = process.env.REACT_APP_MAPTILER_KEY;
+
     if (!key) {
       console.error("Missing REACT_APP_MAPTILER_KEY");
       return;
     }
 
-    maptilersdk.config.apiKey = key;
-
-    // 2. Use a direct, modern style variant string identifier
-    const map = new maptilersdk.Map({
+    const map = new maplibregl.Map({
       container: mapContainerRef.current,
-      style: maptilersdk.MapStyle.STREETS,
+      style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${key}`,
       center: [-1.3857, 52.3558],
       zoom: 15,
-      navigationControl: "top-right",
     });
 
-    new maptilersdk.Marker({ color: "#f2c1bd" })
-      .setLngLat([-1.3857, 52.3558])
-      .setPopup(
-        new maptilersdk.Popup().setHTML(`
+    map.on("load", () => {
+      map.addControl(new maplibregl.NavigationControl(), "top-right");
+
+      new maplibregl.Marker({ color: "#f2c1bd" })
+        .setLngLat([-1.3857, 52.3558])
+        .setPopup(
+          new maplibregl.Popup().setHTML(`
           <h3>Bourton Hall</h3>
           <p>Wedding Venue</p>
         `),
-      )
-      .addTo(map);
+        )
+        .addTo(map);
 
-    mapRef.current = map;
+      mapRef.current = map;
+    });
 
-    // 3. Keep the cleanup function focused on production unmounting
     return () => {
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
+      if (map) map.remove();
     };
   }, []);
+
   return (
     <section
       id="location"
