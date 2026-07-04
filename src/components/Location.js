@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import * as mapboxgl from "mapbox-gl";
+import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 const Location = () => {
