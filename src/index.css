@@ -44,8 +44,22 @@ body {
   background: #9ca3af;
 }
 
+.maplibregl-popup-close-button {
+  padding: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  color: #676b57;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.maplibregl-popup-close-button:hover {
+  background-color: rgba(103, 107, 87, 0.08);
+}
+
 .nav-link {
-  @apply text-xs uppercase tracking-[0.25em] text-[#676b57] transition-all duration-300 hover:text-[#b08b80];
+  @apply text-xs uppercase tracking-[0.25em] text-[#676b57] transition-all duration-300 hover:text-[#D6C27A];
 }
 
 @keyframes loadingBar {
@@ -56,4 +70,134 @@ body {
   to {
     transform: scaleX(1);
   }
+}
+
+@keyframes flowerReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-flower {
+  opacity: 0;
+  animation: flowerReveal 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* .animate-flower {
+  opacity: 0;
+  animation: flowerReveal 1.8s ease forwards;
+} */
+
+@keyframes diamondReveal {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+}
+
+.diamond-draw {
+  pointer-events: none;
+  opacity: 0;
+  animation: diamondReveal 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes softReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(14px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0);
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: softReveal 1.2s ease forwards;
+  animation-delay: 1.8s;
+}
+
+.hero-name {
+  opacity: 0;
+  animation: softReveal 1.6s ease forwards;
+  animation-delay: 2.3s;
+}
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 4rem;
+    opacity: 1;
+  }
+}
+
+.hero-line {
+  width: 0;
+  opacity: 0;
+  animation: lineGrow 0.9s ease forwards;
+  animation-delay: 3s;
+}
+
+.hero-dot {
+  opacity: 0;
+  animation: softReveal 0.8s ease forwards;
+  animation-delay: 3s;
+}
+
+.hero-date {
+  opacity: 0;
+  animation: softReveal 1s ease forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes butterflyFly {
+  0% {
+    transform: translate(-50%, -50%) translate(0px, 0px) rotate(-10deg);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translate(60px, -40px) rotate(18deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translate(120px, 10px) rotate(-12deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translate(40px, 70px) rotate(15deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(0px, 0px) rotate(-10deg);
+  }
+}
+
+.animate-butterfly {
+  animation: butterflyFly 20s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.animate-butterflyFloat {
+  animation: butterflyFloat 18s ease-in-out infinite;
 }

@@ -28,7 +28,7 @@ const Navbar = () => {
 
           <a
             href="#rsvp"
-            className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#b08b80]"
+            className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#D6C27A]"
           >
             RSVP
           </a>
@@ -40,8 +40,9 @@ const Navbar = () => {
         >
           RSVP
         </a>
-
-        <HamburgerMenu />
+        <div className="md:hidden">
+          <HamburgerMenu />
+        </div>
       </nav>
     </header>
   );

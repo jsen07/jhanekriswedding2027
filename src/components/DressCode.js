@@ -6,7 +6,7 @@ import ChampagneWomen from "../assets/Models/ChampagneWomen.webp";
 
 import GreenSuitMan from "../assets/Models/GreenSuitMan.webp";
 import GreyPinkSuitMan from "../assets/Models/GreyPinkSuitMan.webp";
-import GreyWhiteSuitMan from "../assets/Models/GreyWhiteSuitMan.webp";
+import BeigeSuitMan from "../assets/Models/BeigeSuitMan.webp";
 
 const colours = [
   { name: "Sage", hex: "#b4c8b2" },
@@ -19,10 +19,7 @@ const colours = [
 
 const DressCode = () => {
   return (
-    <section
-      id="dresscode"
-      className="relative overflow-hidden pt-28 pb-28 px-6"
-    >
+    <section id="dresscode" className="relative overflow-hidden py-28 px-6">
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <div className="text-center">
@@ -117,7 +114,7 @@ const DressCode = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6 border-b border-[#D6C27A]/75 pb-4 lg:flex-row">
+        <div className="mt-10 flex flex-col gap-6 border-b border-[#D6C27A]/75 pb-4 md:px-14 lg:px-4 lg:flex-row">
           {/* Ladies */}
           <div className="flex-1 rounded-3xl bg-white/40 py-6 lg:px-8 backdrop-blur-sm">
             <p className="mb-2 text-xs uppercase tracking-[0.35em] text-[#8e8f7c]">
@@ -162,23 +159,23 @@ const DressCode = () => {
                 <img
                   src={SageDressWomen}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
 
                 <img
                   src={PinkDressWomen}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
 
                 <img
                   src={ChampagneWomen}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
               </div>
             </div>
-            <div className="sm:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-neutral-300/60 via-neutral-200/30 to-transparent" />
+            {/* <div className="sm:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-neutral-300/60 via-neutral-200/30 to-transparent" /> */}
           </div>
           {/* Male Models */}
           <div className="relative w-full">
@@ -187,23 +184,23 @@ const DressCode = () => {
                 <img
                   src={GreenSuitMan}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
 
                 <img
                   src={GreyPinkSuitMan}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
 
                 <img
-                  src={GreyWhiteSuitMan}
+                  src={BeigeSuitMan}
                   alt=""
-                  className="w-[130px] flex-shrink-0 opacity-80 sm:w-[200px]"
+                  className="w-[112px] flex-shrink-0 opacity-80 sm:w-[200px]"
                 />
               </div>
             </div>
-            <div className="sm:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-neutral-300/60 via-neutral-200/30 to-transparent" />
+            {/* <div className="sm:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-neutral-300/60 via-neutral-200/30 to-transparent" /> */}
           </div>
         </div>
       </div>

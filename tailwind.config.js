@@ -52,12 +52,48 @@ module.exports = {
             transform: "translateY(0)",
           },
         },
+
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        diamondIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translate(-50%, -50%) rotate(45deg) scale(0.85)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translate(-50%, -50%) rotate(45deg) scale(1)",
+          },
+        },
+        slowSpin: {
+          "0%": { transform: "rotate(45deg)" },
+          "100%": { transform: "rotate(405deg)" },
+        },
+
+        fadeIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(12px)",
+            filter: "blur(6px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+            filter: "blur(0)",
+          },
+        },
       },
 
       animation: {
         scroll: "scroll 2s ease-in-out infinite",
         float: "float 4s ease-in-out infinite",
         "fade-in-up": "fadeInUp 1.5s ease forwards",
+        fadeUp: "fadeUp 1s ease-out forwards",
+        diamondIn: "diamondIn 1.2s ease-out forwards",
+        slowSpin: "slowSpin 18s linear infinite",
+        fadeIn: "fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },

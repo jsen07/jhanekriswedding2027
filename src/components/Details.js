@@ -4,9 +4,9 @@ const Details = () => {
   return (
     <section
       id="details"
-      className="relative min-h-screen bg-sage px-5 py-20 text-[#676b57] sm:px-6 lg:px-10 lg:py-28 flex flex-col items-center"
+      className="relative bg-sage py-28 px-6 text-[#676b57] flex flex-col items-center"
     >
-      <div className="relative flex max-w-6xl flex-col gap-12 lg:min-h-[70vh] lg:flex-row lg:gap-16">
+      <div className="relative flex max-w-6xl flex-col gap-12 md:flex-row md:gap-4 lg:gap-28">
         {/* Left content */}
         <div className="flex flex-col">
           <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[#8e8f7c] sm:text-sm">

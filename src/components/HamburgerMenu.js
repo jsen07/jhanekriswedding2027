@@ -34,12 +34,12 @@ const HamburgerMenu = () => {
 
       {/* Menu */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-screen w-[85%] max-w-sm transform bg-sage shadow-2xl transition-transform duration-500 ease-out ${
+        className={`fixed right-0 top-0 z-50 h-screen w-[85%] max-w-sm transform bg-sage shadow-2xl transition-transform duration-500 ease-out overflow-y-auto ${
           isNavActive ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-1 flex-col px-8 py-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between bg-sage sticky top-0 py-2">
             <p className="text-xs uppercase tracking-[0.35em] text-[#8e8f7c]">
               Wedding Menu
             </p>

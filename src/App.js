@@ -38,14 +38,14 @@ function App() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-white">
-      {/* <div className="fixed top-0 left-0 z-50 bg-black text-white text-base px-10 py-1 rounded-br">
+      <div className="fixed top-0 left-0 z-50 bg-black text-white text-base px-10 py-1 rounded-br">
         <div className="block sm:hidden">XS</div>
         <div className="hidden sm:block md:hidden">SM</div>
         <div className="hidden md:block lg:hidden">MD</div>
         <div className="hidden lg:block xl:hidden">LG</div>
         <div className="hidden xl:block 2xl:hidden">XL</div>
         <div className="hidden 2xl:block">2XL</div>
-      </div> */}
+      </div>
 
       {/* <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[#B4C8B2]" />

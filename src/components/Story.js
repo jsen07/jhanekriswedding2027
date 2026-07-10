@@ -2,6 +2,7 @@ import React from "react";
 import storyborder from "../assets/07397740e5e379825087a8b71720ecff.webp";
 import whiteflower from "../assets/whiteflower.webp";
 import Couple from "../assets/KrisAndJhane.webp";
+import RevealSection from "./RevealSection";
 
 const timeline = [
   {
@@ -42,7 +43,8 @@ const Story = () => {
 
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
-        <div className="mb-20 text-center">
+
+        <RevealSection className="mb-20 text-center">
           <h2 className="font-tangerine text-[5rem] leading-none md:text-[7rem]">
             Our Story
           </h2>
@@ -58,7 +60,7 @@ const Story = () => {
             adventures, and countless beautiful memories. Here's a glimpse into
             the moments that led us here.
           </p>
-        </div>
+        </RevealSection>
 
         {/* Timeline */}
         <div className="relative mx-auto max-w-4xl">
@@ -67,7 +69,7 @@ const Story = () => {
 
           <div className="space-y-14">
             {timeline.map((item, index) => (
-              <div
+              <RevealSection
                 key={item.date}
                 className={`relative flex flex-col gap-6 md:flex-row ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
@@ -118,7 +120,7 @@ const Story = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </RevealSection>
             ))}
           </div>
         </div>

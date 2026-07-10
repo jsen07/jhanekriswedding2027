@@ -93,9 +93,11 @@ const FAQ = () => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between p-6 text-left"
+                  className="flex w-full items-center justify-between py-6 md:p-6 text-left"
                 >
-                  <h3 className="text-sm text-[#676b57]">{faq.question}</h3>
+                  <h3 className="text-sm text-[#676b57] font-semibold">
+                    {faq.question}
+                  </h3>
 
                   <ChevronDown
                     size={22}

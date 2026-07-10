@@ -94,13 +94,21 @@ const Rsvp = () => {
 
             <div className="flex gap-4 mt-6 mb-10">
               <label className="flex cursor-pointer items-center gap-2 text-xs">
-                <input type="radio" name="attendance" />
-                Joyfully Accept
+                <input
+                  type="radio"
+                  name="attendance"
+                  className="h-4 w-4 accent-[#D6C27A]"
+                />
+                Accept
               </label>
 
               <label className="flex cursor-pointer items-center gap-2 text-xs">
-                <input type="radio" name="attendance" />
-                Regretfully Decline
+                <input
+                  type="radio"
+                  name="attendance"
+                  className="h-4 w-4 accent-[#D6C27A]"
+                />
+                Decline
               </label>
             </div>
           </div>
@@ -122,7 +130,7 @@ const Rsvp = () => {
               mt-6
               w-full
               rounded-full
-              bg-[#676b57]
+              bg-[#D6C27A]
               py-4
               text-sm
               uppercase

@@ -22,9 +22,9 @@ const Location = () => {
 
     const map = new maptilersdk.Map({
       container: mapContainerRef.current,
-      style: "streets-v2",
+      style: maptilersdk.MapStyle.BASIC,
       center: [-1.3857, 52.3558],
-      zoom: 15,
+      zoom: 12,
       navigationControl: "top-right",
       workerCount: 0,
     });
@@ -32,10 +32,28 @@ const Location = () => {
     new maptilersdk.Marker({ color: "#f2c1bd" })
       .setLngLat([-1.3857, 52.3558])
       .setPopup(
-        new maptilersdk.Popup().setHTML(`
-          <h3>Bourton Hall</h3>
-          <p>Wedding Venue</p>
-        `),
+        new maptilersdk.Popup({
+          offset: 30,
+          maxWidth: "300px",
+        }).setHTML(`
+  <div class="bg-white p-2 text-center w-[200px] ">
+    <h3 class="mt-3 text-base font-light text-[#676b57]">
+      Bourton Hall
+    </h3>
+
+    <div class="mx-auto my-5 flex items-center justify-center gap-3">
+      <div class="h-px w-10 bg-[#D6C27A]"></div>
+      <div class="h-2 w-2 rotate-45 bg-[#D6C27A]"></div>
+      <div class="h-px w-10 bg-[#D6C27A]"></div>
+    </div>
+
+    <p class="text-xs leading-7 text-[#676b57]/80">
+      Main Street<br />
+      Bourton-on-Dunsmore<br />
+      Rugby CV23 9QZ
+    </p>
+  </div>
+`),
       )
       .addTo(map);
 
@@ -72,9 +90,9 @@ const Location = () => {
         </div>
 
         {/* Content */}
-        <div className="mt-20 flex flex-col lg:flex-row">
+        <div className="mt-20 flex flex-col md:px-14 md:flex-row">
           {/* Venue Information */}
-          <div className="flex w-[520px] flex-col justify-center rounded-[32px] bg-white/40 py-8 lg:p-10 backdrop-blur-sm">
+          <div className="flex w-[520px] md:max-w-[350px] flex-col justify-center rounded-[32px] bg-white/40 py-8 backdrop-blur-sm">
             <p className="text-xs uppercase tracking-[0.35em] text-[#8e8f7c]">
               Venue
             </p>
@@ -122,7 +140,7 @@ const Location = () => {
           <div className="flex-1 flex justify-center items-center">
             <div
               ref={mapContainerRef}
-              className="h-[300px] lg:h-[500px] w-full overflow-hidden rounded-3xl shadow-xl"
+              className="h-[300px] md:h-full w-full overflow-hidden rounded-3xl shadow-xl"
             />
           </div>
         </div>
