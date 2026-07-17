@@ -4,7 +4,7 @@ import Story from "./components/Story";
 import Details from "./components/Details";
 import Location from "./components/Location";
 import DressCode from "./components/DressCode";
-import Rsvp from "./components/Rsvp";
+// import Rsvp from "./components/Rsvp";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
