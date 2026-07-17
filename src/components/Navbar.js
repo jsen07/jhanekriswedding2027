@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center">
       <nav className="flex w-full max-w-4xl items-center justify-between px-5 py-3 md:px-8">
@@ -26,20 +28,26 @@ const Navbar = () => {
             Details
           </a>
 
-          <a
-            href="#rsvp"
+          <button
+            onClick={() => navigate("/rsvp")}
             className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#D6C27A]"
           >
-            RSVP
-          </a>
+            Rsvp
+            {/* <a
+              href="#rsvp"
+              className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#D6C27A]"
+           >
+              RSVP
+           </a>  */}
+          </button>
         </div>
 
-        <a
-          href="#rsvp"
-          className="rounded-full bg-[#D6C27A] px-4 py-2 text-xs uppercase tracking-[0.2em] mt-4 text-white md:hidden"
+        <button
+          onClick={() => navigate("/rsvp")}
+          className="rounded-full bg-[#D6C27A] px-5 py-2 text-xs uppercase tracking-[0.25em] text-white transition-all duration-300 hover:bg-[#D6C27A] md:hidden"
         >
           RSVP
-        </a>
+        </button>
         <div className="md:hidden">
           <HamburgerMenu />
         </div>

@@ -44,7 +44,7 @@ const Footer = () => {
           Made with love · 2027
         </p>
 
-        <p className="mt-8 text-xs tracking-[0.2em] text-[#8e8f7c]">
+        <p className="mt-8 text-[8px] tracking-[0.2em] text-[#8e8f7c]">
           Created by Jayssen De Castro
         </p>
       </div>

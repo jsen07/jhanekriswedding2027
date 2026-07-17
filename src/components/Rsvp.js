@@ -15,9 +15,6 @@ const Rsvp = () => {
             max-w-none
       w-[320px]
       sm:w-[450px]
-      lg:w-[650px]
-      xl:w-[750px]
-      2xl:w-[450px]
       select-none
     "
           />
